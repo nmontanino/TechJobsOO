@@ -2,6 +2,7 @@
 using TechJobs.Data;
 using TechJobs.ViewModels;
 
+
 namespace TechJobs.Controllers
 {
     public class JobController : Controller
@@ -18,9 +19,8 @@ namespace TechJobs.Controllers
         // The detail display for a given Job at URLs like /Job?id=17
         public IActionResult Index(int id)
         {
-            // TODO #1 - get the Job with the given ID and pass it into the view
-
-            return View();
+            Models.Job job = jobData.Find(id);
+            return View(job);
         }
 
         public IActionResult New()
